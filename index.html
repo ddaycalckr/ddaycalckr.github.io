@@ -1,0 +1,795 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+<meta name="google-site-verification" content="HoWofmErOOKMSn8dHeXvBTb5cGoEBEB1rQ7Y3CrUYgY" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>디데이 계산기 — 디데이, 날짜 차이, 기념일 계산</title>
+    <meta name="description" content="디데이 계산기는 목표일까지 남은 날짜를 세는 디데이 계산, 두 날짜 사이의 날짜 차이 계산, 100일·200일·1주년 기념일 계산, 날짜 더하기와 빼기를 한곳에서 제공하는 무료 날짜 계산 도구입니다." />
+    <link rel="canonical" href="https://ddaycalckr.github.io/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="디데이 계산기" />
+    <meta property="og:title" content="디데이 계산기 — 디데이, 날짜 차이, 기념일 계산" />
+    <meta property="og:description" content="목표일까지 남은 날짜를 세는 디데이 계산부터 100일·1주년 기념일 계산, 날짜 차이와 날짜 더하기·빼기까지, 날짜 계산을 한곳에서 해결하세요." />
+    <meta property="og:url" content="https://ddaycalckr.github.io/" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="디데이 계산기 — 디데이, 날짜 차이, 기념일 계산" />
+    <meta name="twitter:description" content="디데이 계산, 날짜 차이 계산, 100일·1주년 기념일 계산, 날짜 더하기·빼기를 제공하는 무료 날짜 계산 도구입니다." />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "디데이 계산기",
+          "url": "https://ddaycalckr.github.io/",
+          "inLanguage": "ko"
+        },
+        {
+          "@type": "WebApplication",
+          "name": "디데이 계산기",
+          "url": "https://ddaycalckr.github.io/",
+          "applicationCategory": "UtilitiesApplication",
+          "operatingSystem": "Any",
+          "inLanguage": "ko",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "KRW" }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "디데이(D-Day)란 정확히 무엇인가요?", "acceptedAnswer": { "@type": "Answer", "text": "디데이는 정해진 목표일까지 남은 날짜를 세는 표기 방식입니다. 목표일 당일은 D-DAY, 하루 전날은 D-1, 한 달쯤 전이면 D-30처럼 나타내며, 원래 군사와 행정 분야에서 쓰이던 방식이 일상에서도 널리 쓰이게 되었습니다." } },
+            { "@type": "Question", "name": "D-30은 무슨 뜻인가요?", "acceptedAnswer": { "@type": "Answer", "text": "목표일까지 30일이 남았다는 뜻입니다. 오늘을 기준으로 목표일까지의 날짜 차이를 세며, 숫자가 0에 가까워질수록 목표일이 다가온 것입니다." } },
+            { "@type": "Question", "name": "목표일이 이미 지나면 어떻게 표시되나요?", "acceptedAnswer": { "@type": "Answer", "text": "지난 날짜는 D+로 표시합니다. 예를 들어 목표일이 5일 지났다면 D+5라고 쓰며, 이 계산기는 지난 날짜를 자동으로 D+ 표기로 보여 줍니다." } },
+            { "@type": "Question", "name": "기념일 계산에서 시작일을 1일로 세는 이유는 무엇인가요?", "acceptedAnswer": { "@type": "Answer", "text": "한국에서는 커플 기념일이나 아기의 백일 등을 셀 때 시작한 날 자체를 첫날로 세는 관습이 있기 때문입니다. 그래서 100일은 시작일에 99일을 더한 날이 됩니다." } },
+            { "@type": "Question", "name": "100일 기념일은 어떻게 계산하나요?", "acceptedAnswer": { "@type": "Answer", "text": "사귀기 시작한 날을 1일로 세고, 그날부터 99일을 더하면 100일이 됩니다. 예를 들어 윤년이 아닌 해에 1월 1일에 시작했다면 100일은 4월 10일입니다." } },
+            { "@type": "Question", "name": "1주년은 365일째 되는 날인가요?", "acceptedAnswer": { "@type": "Answer", "text": "아닙니다. 1주년은 일수가 아니라 날짜로 셉니다. 시작한 날짜와 다음 해의 같은 월과 일이 1주년이며, 사이에 2월 29일이 끼면 366일째가 되는 경우도 있습니다." } },
+            { "@type": "Question", "name": "날짜 차이 계산에서 시작일과 종료일을 모두 포함하면 어떻게 되나요?", "acceptedAnswer": { "@type": "Answer", "text": "두 날짜 사이의 간격에 1을 더하면 됩니다. 예를 들어 월요일부터 금요일까지의 간격은 4일이지만 양쪽을 모두 포함해 세면 5일입니다. 숙박 일수나 근무 일수를 셀 때 이 차이를 확인하세요." } },
+            { "@type": "Question", "name": "윤년인 해의 2월 29일도 정확하게 계산되나요?", "acceptedAnswer": { "@type": "Answer", "text": "네. 이 계산기는 실제 달력을 기준으로 계산하므로 2월 29일이 있는 윤년도 정확히 반영됩니다." } },
+            { "@type": "Question", "name": "날짜 더하기에서 지난 날짜도 구할 수 있나요?", "acceptedAnswer": { "@type": "Answer", "text": "네. 날짜 더하기/빼기 도구에서 일 전을 선택하면 기준일에서 원하는 일수를 뺀 날짜와 요일을 확인할 수 있습니다." } },
+            { "@type": "Question", "name": "입력한 날짜가 서버에 저장되나요?", "acceptedAnswer": { "@type": "Answer", "text": "아니요. 모든 계산은 사용자의 브라우저 안에서만 이루어지며, 입력한 날짜는 서버로 전송되거나 저장되지 않습니다." } }
+          ]
+        }
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --bg-soft: #f3f6f4;
+        --ink: #1a201d;
+        --muted: #59665f;
+        --line: #dce3df;
+        --accent: #0d7a5f;
+        --accent-strong: #095c47;
+        --accent-soft: #e7f4ef;
+        --field-bg: #ffffff;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #121614;
+          --bg-soft: #1a201d;
+          --ink: #e9edea;
+          --muted: #a2b3aa;
+          --line: #2c3631;
+          --accent: #43c9a5;
+          --accent-strong: #6fd8bc;
+          --accent-soft: #173028;
+          --field-bg: #1a201d;
+        }
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+        font-size: 1rem;
+        line-height: 1.75;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: var(--accent-strong); text-decoration: underline; text-underline-offset: 3px; }
+      a:hover { color: var(--accent); }
+      .wrap { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+
+      header.site {
+        border-bottom: 1px solid var(--line);
+        background: var(--bg);
+      }
+      .site-inner {
+        display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px;
+        padding-top: 12px; padding-bottom: 12px;
+      }
+      .brand {
+        font-size: 1.25rem; font-weight: 800; letter-spacing: -0.02em;
+        color: var(--ink); text-decoration: none;
+      }
+      .brand:hover { color: var(--ink); }
+      nav.main { display: flex; flex-wrap: wrap; gap: 2px 4px; margin-left: auto; }
+      nav.main a {
+        color: var(--ink); text-decoration: none; font-weight: 600; font-size: 0.98rem;
+        padding: 8px 10px; min-height: 40px; display: inline-flex; align-items: center;
+        border-radius: 6px;
+      }
+      nav.main a:hover { color: var(--accent-strong); background: var(--bg-soft); }
+      nav.main a.active { color: var(--accent-strong); }
+
+      main { padding: 34px 0 10px; }
+      .page { display: none; }
+      .page.on { display: block; }
+
+      h1 { font-size: 2rem; line-height: 1.3; letter-spacing: -0.02em; margin: 0 0 14px; font-weight: 800; }
+      h2 { font-size: 1.35rem; line-height: 1.4; letter-spacing: -0.01em; margin: 40px 0 12px; font-weight: 700; }
+      h2:first-child { margin-top: 0; }
+      p { margin: 0 0 14px; }
+      .lead { font-size: 1.08rem; color: var(--ink); }
+      .muted { color: var(--muted); }
+      .today-line { color: var(--muted); font-size: 0.98rem; margin-bottom: 26px; }
+      .today-line strong { color: var(--accent-strong); font-weight: 700; }
+
+      .tool {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 22px 22px 20px;
+        margin: 0 0 22px;
+        background: var(--bg);
+      }
+      .tool h2 { margin-top: 0; font-size: 1.25rem; }
+      .tool .desc { color: var(--muted); font-size: 0.97rem; margin-bottom: 16px; }
+      .fields { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
+      .field { display: flex; flex-direction: column; gap: 6px; flex: 1 1 160px; }
+      .field.narrow { flex: 0 1 130px; }
+      .field label { font-size: 0.9rem; font-weight: 600; color: var(--muted); }
+      input[type="date"], input[type="number"], select {
+        font: inherit; font-size: 1rem; color: var(--ink);
+        background: var(--field-bg);
+        border: 1px solid var(--line); border-radius: 8px;
+        padding: 9px 12px; min-height: 44px; width: 100%;
+      }
+      input[type="date"]:focus, input[type="number"]:focus, select:focus {
+        outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent);
+      }
+      button.calc {
+        font: inherit; font-weight: 700; font-size: 1rem;
+        background: var(--accent); color: #fff; border: 0; border-radius: 8px;
+        padding: 10px 22px; min-height: 44px; cursor: pointer;
+      }
+      @media (prefers-color-scheme: dark) { button.calc { color: #0c1512; } }
+      button.calc:hover { background: var(--accent-strong); }
+      @media (prefers-color-scheme: dark) { button.calc:hover { background: var(--accent); opacity: 0.9; } }
+
+      .result { margin-top: 18px; padding-top: 16px; border-top: 1px dashed var(--line); }
+      .result:empty { display: none; }
+      .big {
+        font-size: clamp(2.5rem, 9vw, 3.4rem); font-weight: 800; line-height: 1.15;
+        letter-spacing: -0.02em; color: var(--accent-strong); margin: 0 0 6px;
+      }
+      .result .sub { font-size: 1.02rem; margin: 0 0 4px; }
+      .result .detail { color: var(--muted); font-size: 0.95rem; margin: 0; }
+
+      ul.anniv { list-style: none; margin: 6px 0 0; padding: 0; }
+      ul.anniv li {
+        display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px;
+        padding: 10px 0; border-bottom: 1px solid var(--line);
+      }
+      ul.anniv li:last-child { border-bottom: 0; }
+      ul.anniv .name { font-weight: 800; min-width: 64px; }
+      ul.anniv .date { font-weight: 600; }
+      ul.anniv .rel { color: var(--muted); font-size: 0.93rem; margin-left: auto; }
+
+      .article-list { margin: 8px 0 0; }
+      .article-item { padding: 16px 0; border-bottom: 1px solid var(--line); }
+      .article-item:last-child { border-bottom: 0; }
+      .article-item h3 { margin: 0 0 4px; font-size: 1.12rem; line-height: 1.45; }
+      .article-item h3 a { text-decoration: none; }
+      .article-item h3 a:hover { text-decoration: underline; }
+      .article-item p { margin: 0; color: var(--muted); font-size: 0.97rem; }
+
+      article.prose h1 { margin-bottom: 18px; }
+      article.prose .backlink { display: inline-block; margin-bottom: 18px; font-size: 0.95rem; }
+      article.prose .next { margin-top: 36px; padding-top: 18px; border-top: 1px solid var(--line); }
+
+      details.faq-item { border-bottom: 1px solid var(--line); padding: 6px 0; }
+      details.faq-item summary {
+        cursor: pointer; font-weight: 700; padding: 10px 4px; min-height: 44px;
+        display: flex; align-items: center; list-style: none;
+      }
+      details.faq-item summary::-webkit-details-marker { display: none; }
+      details.faq-item summary::after { content: "+"; margin-left: auto; color: var(--accent-strong); font-weight: 800; padding-left: 12px; }
+      details.faq-item[open ] summary::after { content: "−"; }
+      details.faq-item .a { padding: 0 4px 14px; color: var(--ink); }
+      details.faq-item .a p { margin: 0; }
+
+      footer.site {
+        border-top: 1px solid var(--line); margin-top: 54px;
+        padding: 26px 0 40px; color: var(--muted); font-size: 0.93rem;
+      }
+      footer.site nav { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-bottom: 12px; }
+      footer.site nav a { color: var(--muted); padding: 6px 0; min-height: 36px; display: inline-flex; align-items: center; }
+      footer.site nav a:hover { color: var(--accent-strong); }
+      footer.site p { margin: 0; }
+
+      @media (max-width: 560px) {
+        h1 { font-size: 1.65rem; }
+        .tool { padding: 18px 16px 16px; }
+        nav.main { margin-left: 0; }
+        ul.anniv .rel { margin-left: 0; width: 100%; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site">
+      <div class="wrap site-inner">
+        <a class="brand" href="#/">디데이 계산기</a>
+        <nav class="main" aria-label="주 메뉴">
+          <a href="#/" data-nav="home">홈</a>
+          <a href="#/articles" data-nav="articles">글 모음</a>
+          <a href="#/" data-nav="faq" data-scrollto="faq">자주 묻는 질문</a>
+          <a href="#/about" data-nav="about">소개</a>
+          <a href="#/contact" data-nav="contact">문의</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+
+      <!-- ===================== HOME ===================== -->
+      <section class="page" id="page-home">
+        <h1>디데이 계산기</h1>
+        <p class="lead">목표일까지 며칠이 남았는지, 두 날짜 사이에 며칠이 끼어 있는지, 우리가 만난 지 100일이 언제인지 — 날짜를 세는 일은 생각보다 자주 필요하지만 달력을 한 장씩 넘기며 세다 보면 하루쯤 어긋나기 쉽습니다. 디데이 계산기는 날짜를 고르기만 하면 정확한 일수를 바로 알려 주는 무료 도구입니다.</p>
+        <p class="today-line">오늘은 <strong id="todayLine">—</strong> 입니다.</p>
+
+        <div class="tool" id="tool-dday">
+          <h2>디데이 계산</h2>
+          <p class="desc">목표 날짜를 선택하면 오늘 기준으로 남은 날은 D-, 지난 날은 D+로 표시합니다.</p>
+          <div class="fields">
+            <div class="field">
+              <label for="ddayDate">목표 날짜</label>
+              <input type="date" id="ddayDate" />
+            </div>
+            <button type="button" class="calc" id="ddayBtn">계산하기</button>
+          </div>
+          <div class="result" id="ddayResult" aria-live="polite"></div>
+        </div>
+
+        <div class="tool" id="tool-diff">
+          <h2>날짜 차이 계산</h2>
+          <p class="desc">시작일과 종료일 사이의 간격이 며칠인지 계산합니다. 계약 기간, 여행 일정, 복무 기간처럼 두 날짜 사이의 일수가 필요할 때 쓰세요.</p>
+          <div class="fields">
+            <div class="field">
+              <label for="diffStart">시작일</label>
+              <input type="date" id="diffStart" />
+            </div>
+            <div class="field">
+              <label for="diffEnd">종료일</label>
+              <input type="date" id="diffEnd" />
+            </div>
+            <button type="button" class="calc" id="diffBtn">계산하기</button>
+          </div>
+          <div class="result" id="diffResult" aria-live="polite"></div>
+        </div>
+
+        <div class="tool" id="tool-anniv">
+          <h2>기념일 계산</h2>
+          <p class="desc">시작한 날을 1일로 세어 100일, 200일, 300일과 1주년이 되는 날짜를 알려 줍니다. 커플 기념일이나 아기의 백일, 프로젝트 시작일 기준 기념일에 맞춘 방식입니다.</p>
+          <div class="fields">
+            <div class="field">
+              <label for="annivStart">시작일 (1일째)</label>
+              <input type="date" id="annivStart" />
+            </div>
+            <button type="button" class="calc" id="annivBtn">계산하기</button>
+          </div>
+          <div class="result" id="annivResult" aria-live="polite"></div>
+        </div>
+
+        <div class="tool" id="tool-add">
+          <h2>날짜 더하기 / 빼기</h2>
+          <p class="desc">기준 날짜에서 원하는 일수를 더하거나 뺀 날짜와 요일을 알려 줍니다. "오늘부터 90일 뒤", "마감 2주 전" 같은 날짜를 찾을 때 편리합니다.</p>
+          <div class="fields">
+            <div class="field">
+              <label for="addBase">기준 날짜</label>
+              <input type="date" id="addBase" />
+            </div>
+            <div class="field narrow">
+              <label for="addDays">일수</label>
+              <input type="number" id="addDays" value="100" min="0" max="100000" inputmode="numeric" />
+            </div>
+            <div class="field narrow">
+              <label for="addDir">방향</label>
+              <select id="addDir">
+                <option value="plus">일 후 (더하기)</option>
+                <option value="minus">일 전 (빼기)</option>
+              </select>
+            </div>
+            <button type="button" class="calc" id="addBtn">계산하기</button>
+          </div>
+          <div class="result" id="addResult" aria-live="polite"></div>
+        </div>
+
+        <h2>디데이, 제대로 세고 계신가요?</h2>
+        <p>디데이 표기는 단순해 보이지만 기준을 어디에 두느냐에 따라 하루가 달라집니다. 오늘을 포함해서 세는지, 목표일 당일을 어떻게 부르는지 헷갈린다면 <a href="#/how-to-count-dday">디데이 세는 법: D-DAY와 D+의 의미</a>에서 표기의 기준을 먼저 확인해 보세요. 왜 어떤 날은 D-1이고 어떤 날은 D-DAY인지, 날짜가 지난 뒤에는 왜 D+로 바뀌는지 차근차근 설명했습니다.</p>
+        <p>기념일은 디데이와 세는 방식이 다릅니다. 디데이는 목표일까지 "남은" 날을 세지만, 커플의 100일이나 아기의 백일 같은 기념일은 시작한 날을 1일로 세기 때문에 같은 날짜라도 결과가 하루 차이 납니다. 두 방식이 어떻게 다른지, 1주년은 왜 365일째가 아닌지는 <a href="#/anniversary-counting">100일, 1주년 기념일 계산하는 법</a>에서 자세히 다뤘습니다.</p>
+        <p>디데이는 실생활에서 쓸모가 많습니다. 수능처럼 준비 기간이 정해진 시험, 전역일을 기다리는 복무 기간, 출산예정일까지의 시간은 디데이로 바꿔 두면 남은 시간을 계획으로 옮기기 훨씬 쉬워집니다. 상황별로 어떻게 활용하면 좋은지는 <a href="#/dday-use-cases">수능, 전역, 출산예정일 디데이 활용법</a>을 참고하세요.</p>
+
+        <h2>읽을거리</h2>
+        <div class="article-list">
+          <div class="article-item">
+            <h3><a href="#/how-to-count-dday">디데이 세는 법: D-DAY와 D+의 의미</a></h3>
+            <p>D-30과 D-DAY, 그리고 날짜가 지난 뒤의 D+ 표기가 각각 무엇을 뜻하는지, 하루 차이로 어긋나기 쉬운 이유와 함께 정리했습니다.</p>
+          </div>
+          <div class="article-item">
+            <h3><a href="#/anniversary-counting">100일, 1주년 기념일 계산하는 법</a></h3>
+            <p>시작한 날을 1일로 세는 기념일 계산의 원칙과 100일·200일·300일·1주년을 구하는 방법, 윤년과 짧은 달에서 주의할 점을 설명합니다.</p>
+          </div>
+          <div class="article-item">
+            <h3><a href="#/dday-use-cases">수능, 전역, 출산예정일 디데이 활용법</a></h3>
+            <p>수능 공부 계획, 전역일 카운트다운, 출산예정일 준비까지, 디데이를 실제 일정 관리에 활용하는 방법을 모았습니다.</p>
+          </div>
+        </div>
+        <p style="margin-top:14px;">모든 글은 <a href="#/articles">글 모음</a> 페이지에서도 볼 수 있습니다.</p>
+
+        <h2 id="faq">자주 묻는 질문</h2>
+        <div id="faqList">
+          <details class="faq-item">
+            <summary>디데이(D-Day)란 정확히 무엇인가요?</summary>
+            <div class="a"><p>디데이는 정해진 목표일까지 남은 날짜를 세는 표기 방식입니다. 목표일 당일은 D-DAY, 하루 전날은 D-1, 한 달쯤 전이면 D-30처럼 나타내며, 원래 군사와 행정 분야에서 쓰이던 방식이 일상에서도 널리 쓰이게 되었습니다.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>D-30은 무슨 뜻인가요?</summary>
+            <div class="a"><p>목표일까지 30일이 남았다는 뜻입니다. 오늘을 기준으로 목표일까지의 날짜 차이를 세며, 숫자가 0에 가까워질수록 목표일이 다가온 것입니다.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>목표일이 이미 지나면 어떻게 표시되나요?</summary>
+            <div class="a"><p>지난 날짜는 D+로 표시합니다. 예를 들어 목표일이 5일 지났다면 D+5라고 쓰며, 이 계산기는 지난 날짜를 자동으로 D+ 표기로 보여 줍니다.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>기념일 계산에서 시작일을 1일로 세는 이유는 무엇인가요?</summary>
+            <div class="a"><p>한국에서는 커플 기념일이나 아기의 백일 등을 셀 때 시작한 날 자체를 첫날로 세는 관습이 있기 때문입니다. 그래서 100일은 시작일에 99일을 더한 날이 됩니다.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>100일 기념일은 어떻게 계산하나요?</summary>
+            <div class="a"><p>사귀기 시작한 날을 1일로 세고, 그날부터 99일을 더하면 100일이 됩니다. 예를 들어 윤년이 아닌 해에 1월 1일에 시작했다면 100일은 4월 10일입니다.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>1주년은 365일째 되는 날인가요?</summary>
+            <div class="a"><p>아닙니다. 1주년은 일수가 아니라 날짜로 셉니다. 시작한 날짜와 다음 해의 같은 월과 일이 1주년이며, 사이에 2월 29일이 끼면 366일째가 되는 경우도 있습니다.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>날짜 차이 계산에서 시작일과 종료일을 모두 포함하면 어떻게 되나요?</summary>
+            <div class="a"><p>두 날짜 사이의 간격에 1을 더하면 됩니다. 예를 들어 월요일부터 금요일까지의 간격은 4일이지만 양쪽을 모두 포함해 세면 5일입니다. 숙박 일수나 근무 일수를 셀 때 이 차이를 확인하세요.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>윤년인 해의 2월 29일도 정확하게 계산되나요?</summary>
+            <div class="a"><p>네. 이 계산기는 실제 달력을 기준으로 계산하므로 2월 29일이 있는 윤년도 정확히 반영됩니다.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>날짜 더하기에서 지난 날짜도 구할 수 있나요?</summary>
+            <div class="a"><p>네. 날짜 더하기/빼기 도구에서 일 전을 선택하면 기준일에서 원하는 일수를 뺀 날짜와 요일을 확인할 수 있습니다.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>입력한 날짜가 서버에 저장되나요?</summary>
+            <div class="a"><p>아니요. 모든 계산은 사용자의 브라우저 안에서만 이루어지며, 입력한 날짜는 서버로 전송되거나 저장되지 않습니다.</p></div>
+          </details>
+        </div>
+      </section>
+
+      <!-- ===================== ARTICLES INDEX ===================== -->
+      <section class="page" id="page-articles">
+        <h1>글 모음</h1>
+        <p class="lead">디데이와 기념일 계산에 관한 글을 모았습니다. 도구를 쓰다가 기준이 헷갈릴 때, 또는 남은 날짜를 실제 계획으로 바꾸고 싶을 때 읽어 보세요.</p>
+        <div class="article-list">
+          <div class="article-item">
+            <h3><a href="#/how-to-count-dday">디데이 세는 법: D-DAY와 D+의 의미</a></h3>
+            <p>디데이 표기의 기본 원칙을 정리한 글입니다. D-30이 왜 "30일 남음"인지, 목표일 당일은 왜 D-0이 아니라 D-DAY인지, 날짜가 지난 뒤 붙는 D+는 어떻게 읽는지 설명합니다. 하루 차이로 계산이 어긋나는 흔한 이유도 함께 다룹니다.</p>
+          </div>
+          <div class="article-item">
+            <h3><a href="#/anniversary-counting">100일, 1주년 기념일 계산하는 법</a></h3>
+            <p>기념일은 디데이와 반대로, 남은 날이 아니라 쌓인 날을 셉니다. 시작한 날을 1일로 세는 원칙부터 100일·200일·300일의 계산법, 일수가 아닌 날짜로 세는 1주년의 기준, 윤년과 월말에 생기는 오차까지 정리했습니다.</p>
+          </div>
+          <div class="article-item">
+            <h3><a href="#/dday-use-cases">수능, 전역, 출산예정일 디데이 활용법</a></h3>
+            <p>디데이는 세는 것보다 쓰는 것이 중요합니다. 수능까지의 공부 계획을 남은 날로 나누는 법, 전역 디데이를 복무 생활의 기준으로 삼는 법, 출산예정일을 주수 계산과 함께 보는 법을 상황별로 소개합니다.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== ARTICLE 1 ===================== -->
+      <section class="page" id="page-how-to-count-dday">
+        <article class="prose">
+          <a class="backlink" href="#/articles">← 글 모음으로 돌아가기</a>
+          <h1>디데이 세는 법: D-DAY와 D+의 의미</h1>
+
+          <h2>디데이란 무엇인가요</h2>
+          <p>디데이(D-Day)는 어떤 일이 예정된 날까지 남은 날짜를 세어 표시하는 방식입니다. 원래는 군사 작전이 시작되는 날을 가리키는 말이었지만, 지금은 시험일, 결혼식, 여행 출발일, 프로젝트 마감일처럼 "기다리는 날"이 있는 거의 모든 일정에 쓰입니다. 디데이 표기의 핵심은 오늘을 기준으로 목표일까지의 간격을 숫자로 바꾸는 것입니다. 날짜 자체보다 "며칠 남았는가"를 한눈에 보여 주기 때문에, 남은 시간을 체감하고 계획을 세우는 데 날짜보다 훨씬 직접적입니다.</p>
+          <p>디데이를 정확히 세려면 기준을 하나로 정해야 합니다. 이 계산기를 비롯한 대부분의 디데이 표기는 오늘 날짜와 목표 날짜의 차이, 즉 두 날짜 사이의 간격을 셉니다. 목표일이 오늘로부터 30일 뒤라면 D-30, 1일 뒤라면 D-1이 됩니다. 달력에서 날짜를 하나씩 짚어 가며 세어도 같은 결과가 나오는데, 이때 손가락으로 짚는 날짜는 "오늘 다음 날부터 목표일 전날까지"가 아니라 오늘과 목표일 사이의 간격이라는 점을 기억하면 헷갈리지 않습니다.</p>
+
+          <h2>D-30, D-1, 그리고 D-DAY 읽는 법</h2>
+          <p>D 뒤에 붙는 빼기 기호와 숫자는 "목표일까지 남은 일수"입니다. D-30은 30일이 남았다는 뜻이고, D-7은 일주일, D-1은 바로 내일이 목표일이라는 뜻입니다. 숫자가 작아질수록 목표일이 가까워지고 있다는 신호입니다. 카운트다운이 0에 도달하는 날, 즉 목표일 당일은 D-0이라고 쓰지 않고 D-DAY라고 씁니다. 당일은 남은 날이 없는 특별한 날이라 숫자가 아닌 별도의 표기로 구분하는 것입니다. 그래서 시험 전날 밤에는 D-1, 시험을 치르는 아침에는 D-DAY가 됩니다.</p>
+          <p>한 가지 주의할 점은 "남은 일수"가 시간 단위까지 따지는 개념은 아니라는 것입니다. 디데이는 날짜 단위의 계산이라서, 목표일까지 남은 시간이 30일하고 몇 시간이든 날짜 차이만으로 D-30이 됩니다. 자정을 기준으로 날짜가 바뀌면 디데이도 하루 줄어듭니다. 마감 시각이 정해진 일정이라면 디데이와 별개로 시각을 함께 확인하는 것이 안전합니다.</p>
+
+          <h2>날짜가 지나면 D+로 바뀝니다</h2>
+          <p>목표일이 지났다고 디데이가 사라지는 것은 아닙니다. 지난 날짜는 빼기 대신 더하기 기호를 붙여 D+로 표시합니다. 목표일 다음 날은 D+1, 일주일이 지났으면 D+7입니다. D+ 표기는 "그날로부터 얼마나 시간이 흘렀는가"를 보여 주기 때문에, 결혼한 지 며칠이 됐는지, 프로젝트가 끝난 뒤 며칠이 지났는지, 아이가 태어난 지 며칠째인지 같은 경우에 자주 쓰입니다. 다만 태어난 날이나 결혼한 날 자체를 1일로 세는 기념일 방식과는 기준이 다릅니다. 기념일 방식이 궁금하다면 <a href="#/anniversary-counting">100일, 1주년 기념일 계산하는 법</a>을 함께 읽어 보세요.</p>
+
+          <h2>하루 차이로 어긋나는 이유</h2>
+          <p>디데이 계산에서 가장 흔한 오차는 하루 차이입니다. 원인은 대부분 세는 방식이 아니라 기준의 혼동에 있습니다. 첫째, 오늘을 포함해서 세는 경우입니다. 오늘부터 목표일까지 달력의 날짜 개수를 세면 실제 간격보다 1이 커집니다. 둘째, 기념일 방식과 섞는 경우입니다. 시작한 날을 1일로 세는 기념일 계산을 디데이에 적용하면 역시 하루가 어긋납니다. 셋째, 월말과 윤년을 대충 넘기는 경우입니다. 2월이 28일까지인지 29일까지인지, 30일인 달과 31일인 달을 정확히 반영하지 않으면 손으로 셀수록 오차가 쌓입니다. 이 계산기는 실제 달력 기준으로 날짜 차이를 구하므로 이런 오차가 생기지 않습니다.</p>
+
+          <h2>직접 세어 보기</h2>
+          <p>예를 들어 오늘이 3월 1일이고 목표일이 3월 31일이라면, 두 날짜의 간격은 30일이므로 D-30입니다. 목표일이 3월 2일이라면 D-1, 3월 1일 당일이면 D-DAY입니다. 반대로 목표일이 2월 25일이었다면 이미 4일이 지났으므로 D+4가 됩니다. 홈페이지의 <a href="#/">디데이 계산 도구</a>에 날짜를 넣어 보면 이 표기가 자동으로 계산됩니다. 두 날짜 사이의 간격 자체가 궁금할 때는 날짜 차이 계산을, 기준 날짜에서 며칠 뒤가 언제인지 궁금할 때는 날짜 더하기/빼기를 쓰면 됩니다.</p>
+
+          <h2>디데이를 실생활에 쓰는 법</h2>
+          <p>디데이는 세는 방법만큼이나 활용하는 방법이 중요합니다. 숫자로 바뀐 남은 시간은 계획을 세우는 단위가 되기 때문입니다. 수능까지 남은 날로 공부 범위를 나누거나, 전역일까지의 복무 기간을 확인하거나, 출산예정일까지 준비물을 점검하는 식입니다. 상황별 활용법은 <a href="#/dday-use-cases">수능, 전역, 출산예정일 디데이 활용법</a>에서 이어서 다룹니다.</p>
+
+          <p class="next">관련 글: <a href="#/anniversary-counting">100일, 1주년 기념일 계산하는 법</a> · <a href="#/dday-use-cases">수능, 전역, 출산예정일 디데이 활용법</a></p>
+        </article>
+      </section>
+
+      <!-- ===================== ARTICLE 2 ===================== -->
+      <section class="page" id="page-anniversary-counting">
+        <article class="prose">
+          <a class="backlink" href="#/articles">← 글 모음으로 돌아가기</a>
+          <h1>100일, 1주년 기념일 계산하는 법</h1>
+
+          <h2>기념일은 시작한 날을 1일로 셉니다</h2>
+          <p>기념일 계산의 가장 큰 원칙은 시작한 날 자체를 1일로 센다는 것입니다. 사귀기 시작한 날, 아기가 태어난 날, 일을 시작한 날 — 그 첫날이 곧 1일째입니다. 그래서 기념일의 일수는 "시작일로부터 며칠이 지났는가"가 아니라 "시작일을 포함해 며칠째인가"로 셉니다. 이 원칙 하나 때문에 기념일은 단순한 날짜 차이 계산과 결과가 하루 달라집니다. 날짜 차이로 99일이 지난 시점이 기념일로는 100일째가 되는 것입니다.</p>
+          <p>이 방식은 한국에서 오래전부터 쓰여 온 셈법입니다. 아기의 백일은 태어난 날을 1일로 세어 100일째 되는 날이고, 커플의 100일도 만난 날을 1일로 셉니다. 디데이가 목표까지 "남은" 시간을 재는 도구라면, 기념일은 시작점부터 "쌓인" 시간을 재는 도구라고 이해하면 두 방식이 헷갈리지 않습니다. 디데이 표기 자체가 궁금하다면 <a href="#/how-to-count-dday">디데이 세는 법: D-DAY와 D+의 의미</a>를 먼저 읽어 보세요.</p>
+
+          <h2>100일은 시작일에서 99일을 더한 날</h2>
+          <p>원칙을 식으로 바꾸면 간단합니다. N일째 기념일은 시작일에 (N − 1)일을 더한 날짜입니다. 100일이라면 시작일에 99일을 더합니다. 예를 들어 윤년이 아닌 해의 1월 1일에 시작했다면, 1월 1일이 1일째이므로 100일은 4월 10일이 됩니다. 달력으로 직접 세어 봐도 같은 날짜가 나오지만, 달을 넘길 때마다 그달이 며칠까지 있는지 확인해야 해서 손계산으로는 실수가 잦습니다. 홈페이지의 <a href="#/">기념일 계산 도구</a>에 시작일만 넣으면 100일, 200일, 300일과 1주년을 한 번에 확인할 수 있습니다.</p>
+
+          <h2>200일과 300일도 같은 방식입니다</h2>
+          <p>200일은 시작일에 199일을, 300일은 시작일에 299일을 더합니다. 100일 단위로 챙기는 기념일은 커플 사이에서 특히 익숙하지만, 아기의 200일, 입사 300일, 금연 200일처럼 어떤 시작점에든 적용할 수 있습니다. 일수가 커질수록 손으로 세기는 어려워지므로 계산기를 쓰는 것이 정확합니다. 한 가지 팁을 더하면, 기념일을 챙길 계획이라면 날짜만 확인하지 말고 그날의 요일도 함께 보세요. 기념일이 평일인지 주말인지에 따라 준비 방식이 달라지기 때문입니다. 이 계산기의 기념일 결과에는 요일이 함께 표시됩니다.</p>
+
+          <h2>1주년은 일수가 아니라 날짜로 셉니다</h2>
+          <p>1주년은 100일, 200일과는 성격이 다릅니다. 365일째 되는 날이 아니라, 시작한 날짜와 다음 해의 같은 월·일이 1주년입니다. 2025년 5월 20일에 시작했다면 1주년은 2026년 5월 20일입니다. 사이에 평년만 있으면 시작일로부터 365일째 되는 날과 같지만, 2월 29일이 끼는 기간에는 366일째가 됩니다. 즉 1주년은 "일수"가 아니라 "날짜"의 개념입니다. 그래서 1주년을 구할 때는 일수를 더하는 방식이 아니라 달력에서 같은 날짜를 찾는 방식으로 계산해야 하고, 이 계산기도 그렇게 처리합니다.</p>
+
+          <h2>윤년과 짧은 달에서 주의할 점</h2>
+          <p>기념일 계산에서 오차가 생기기 쉬운 지점은 두 가지입니다. 첫째는 윤년입니다. 기간 안에 2월 29일이 포함되면 같은 기간이라도 일수가 하루 늘어납니다. 둘째는 시작일이 월말인 경우입니다. 예를 들어 2월 29일에 시작했다면 다음 해에는 2월 29일이 없어서 1주년을 2월 28일로 볼지 3월 1일로 볼지 정해 둘 필요가 있습니다. 이 계산기는 2월 29일 시작인 경우 이듬해 2월 28일을 1주년으로 표시합니다. 어느 쪽을 기념일로 챙길지는 상황에 따라 정하면 되지만, 계산 기준을 미리 알아 두면 혼선이 없습니다.</p>
+
+          <h2>기념일과 디데이, 함께 쓰면 더 좋습니다</h2>
+          <p>기념일을 알았다면 그날까지 남은 시간을 디데이로 확인하는 것도 좋은 방법입니다. 예를 들어 100일까지 앞으로 며칠 남았는지를 알면 선물이나 예약을 준비할 여유를 가늠할 수 있습니다. 이 계산기의 기념일 결과에는 각 기념일까지의 디데이도 함께 표시되므로, 날짜와 남은 일수를 한 번에 확인할 수 있습니다. 다가오는 기념일을 일정 관리에 활용하는 방법은 <a href="#/dday-use-cases">수능, 전역, 출산예정일 디데이 활용법</a>에서도 이어집니다.</p>
+
+          <p class="next">관련 글: <a href="#/how-to-count-dday">디데이 세는 법: D-DAY와 D+의 의미</a> · <a href="#/dday-use-cases">수능, 전역, 출산예정일 디데이 활용법</a></p>
+        </article>
+      </section>
+
+      <!-- ===================== ARTICLE 3 ===================== -->
+      <section class="page" id="page-dday-use-cases">
+        <article class="prose">
+          <a class="backlink" href="#/articles">← 글 모음으로 돌아가기</a>
+          <h1>수능, 전역, 출산예정일 디데이 활용법</h1>
+
+          <h2>디데이는 남은 시간을 계획으로 바꾸는 도구입니다</h2>
+          <p>날짜만 아는 것과 남은 일수를 아는 것은 다릅니다. "시험이 11월 셋째 주 목요일"이라는 정보보다 "시험까지 87일"이라는 숫자가 훨씬 행동으로 이어지기 쉽습니다. 남은 일수가 보이면 하루에 해야 할 양을 계산할 수 있고, 중간 점검 날짜를 잡을 수 있고, 뒤처졌는지도 숫자로 확인할 수 있기 때문입니다. 이 글에서는 디데이가 가장 자주 쓰이는 세 가지 상황, 수능과 전역, 출산예정일을 중심으로 활용법을 정리합니다. 디데이 표기의 기본이 궁금하다면 <a href="#/how-to-count-dday">디데이 세는 법: D-DAY와 D+의 의미</a>를 먼저 확인하세요.</p>
+
+          <h2>수능 디데이: 공부 계획을 남은 날로 나누기</h2>
+          <p>수능은 날짜가 고정된 시험이라 디데이 활용의 대표적인 사례입니다. 활용의 핵심은 전체 범위를 남은 일수로 나누는 것입니다. 예를 들어 기출 한 회분을 이틀에 한 번씩 풀 계획이라면, 남은 일수를 2로 나눈 만큼의 회분을 소화할 수 있다는 계산이 나옵니다. 여기서 중요한 것은 계획을 짤 때 복습과 모의고사, 컨디션 조절에 쓸 날을 먼저 빼는 것입니다. 남은 날 전부를 새 진도에 쓰면 막판에 무너지기 쉽습니다. 보통은 디데이 30일을 기준으로 그 이후를 마무리 기간으로 잡는 방식이 많이 쓰입니다. 디데이 100일, 50일, 30일 같은 구간마다 "이 구간이 끝날 때 무엇을 끝내 둘 것인지"를 정해 두면, 카운트다운이 줄어들 때마다 진도를 점검하는 기준점이 생깁니다.</p>
+
+          <h2>전역 디데이: 복무 기간을 눈으로 확인하기</h2>
+          <p>전역 디데이는 입대일과 전역일이라는 두 날짜가 정해져 있어 계산이 명확합니다. 입대일부터 전역일까지의 전체 복무 일수를 구하면 "전체 중 몇 퍼센트를 마쳤는지"까지 계산할 수 있어서, 남은 기간을 체감하는 데 도움이 됩니다. 날짜 차이 계산으로 전체 복무 일수와 오늘까지 복무한 일수를 각각 구한 뒤 비교하면 됩니다. 다만 전역일은 부대 사정이나 개인의 복무 형태에 따라 달라질 수 있으므로, 공식 전역일은 반드시 소속 부대나 병무 관련 안내에서 확인한 날짜를 기준으로 삼아야 합니다. 계산기는 그 날짜까지의 남은 일수를 세는 도구일 뿐, 전역일 자체를 정해 주는 것은 아니기 때문입니다.</p>
+
+          <h2>출산예정일 디데이: 주수 계산과 함께 보기</h2>
+          <p>임신 기간은 보통 마지막 생리 시작일을 기준으로 40주, 즉 280일로 계산하고 그 끝 날짜가 출산예정일이 됩니다. 출산예정일을 디데이로 바꿔 두면 남은 기간을 일 단위로 확인할 수 있어, 병원 검진 예약이나 출산 준비물을 챙기는 일정을 잡기가 쉬워집니다. 반대로 지금 날짜에서 날짜 더하기/빼기를 쓰면 "예정일 2주 전" 같은 날짜도 바로 구할 수 있습니다. 주의할 점은 출산예정일이 말 그대로 예정일이라는 것입니다. 실제 출산은 예정일 앞뒤로 차이가 나는 경우가 흔하므로, 디데이는 준비 일정을 관리하는 참고 지표로 쓰고 의학적인 판단은 담당 의료진의 안내를 따라야 합니다. 아기가 태어난 뒤에는 태어난 날을 1일로 세는 백일 계산이 이어지는데, 이 방식은 <a href="#/anniversary-counting">100일, 1주년 기념일 계산하는 법</a>에서 설명했습니다.</p>
+
+          <h2>여행, 시험, 마감일에도 같은 방법</h2>
+          <p>디데이의 활용 범위는 이 세 가지에 그치지 않습니다. 여행 출발일까지 남은 날로 예약 마감 시점을 역산하거나, 자격증 시험 접수 마감일을 놓치지 않거나, 업무 프로젝트의 마감까지 남은 날을 팀과 공유하는 일 모두 같은 원리입니다. 기준 날짜에서 며칠 전이 언제인지 구하는 날짜 더하기/빼기를 함께 쓰면 "출발 30일 전까지 취소 수수료 없음" 같은 조건도 정확한 날짜로 바꿀 수 있습니다. 날짜를 숫자로 바꾸는 습관 하나가 일정 관리의 정확도를 크게 높여 줍니다.</p>
+
+          <h2>디데이를 꾸준히 확인하는 습관</h2>
+          <p>마지막으로, 디데이는 한 번 계산하고 잊는 숫자가 아니라 주기적으로 확인할 때 의미가 있습니다. 목표일까지의 숫자가 줄어드는 것을 눈으로 확인하면 계획이 현실로 다가오는 감각이 생기고, 일정이 어긋났을 때 조정할 시간도 벌 수 있습니다. 중요한 일정이 있다면 오늘 날짜 기준으로 디데이를 다시 확인하는 것부터 시작해 보세요. 홈페이지의 <a href="#/">디데이 계산기</a>에서 목표 날짜를 넣으면 오늘 기준 디데이가 바로 계산됩니다.</p>
+
+          <p class="next">관련 글: <a href="#/how-to-count-dday">디데이 세는 법: D-DAY와 D+의 의미</a> · <a href="#/anniversary-counting">100일, 1주년 기념일 계산하는 법</a></p>
+        </article>
+      </section>
+
+      <!-- ===================== ABOUT ===================== -->
+      <section class="page" id="page-about">
+        <h1>소개</h1>
+        <p>디데이 계산기는 날짜를 세는 일을 빠르고 정확하게 돕기 위해 만든 무료 웹사이트입니다. 시험, 기념일, 전역, 출산, 여행, 마감일처럼 "며칠 남았는가"와 "며칠째인가"가 중요한 순간은 일상 곳곳에 있지만, 달력을 넘기며 손으로 세다 보면 월말과 윤년에서 하루씩 어긋나기 쉽습니다. 이 사이트는 그런 계산을 날짜 선택 한 번으로 끝낼 수 있게 만들었습니다.</p>
+        <p>제공하는 도구는 네 가지입니다. 목표일까지 남은 날을 D-와 D+로 보여 주는 <a href="#/">디데이 계산</a>, 두 날짜 사이의 간격을 구하는 날짜 차이 계산, 시작한 날을 1일로 세어 100일·200일·300일·1주년을 알려 주는 기념일 계산, 그리고 기준 날짜에서 원하는 일수를 더하고 빼는 날짜 더하기/빼기가 있습니다. 모든 계산은 사용자의 브라우저 안에서 실제 달력 기준으로 이루어지며, 입력한 날짜는 서버로 전송되지 않습니다.</p>
+        <p>도구와 함께 디데이 표기의 의미, 기념일 계산의 원칙, 상황별 활용법을 정리한 글도 제공하고 있습니다. <a href="#/articles">글 모음</a>에서 읽을 수 있으며, 계산 기준이 헷갈릴 때 참고하시면 좋습니다. 사이트 이용 중 불편한 점이나 잘못된 결과를 발견하시면 <a href="#/contact">문의</a> 페이지의 이메일로 알려 주세요.</p>
+      </section>
+
+      <!-- ===================== CONTACT ===================== -->
+      <section class="page" id="page-contact">
+        <h1>문의</h1>
+        <p>디데이 계산기에 대한 문의는 아래 이메일로 보내 주세요. 계산 결과가 실제 달력과 다르게 보이는 경우, 새로운 계산 기능에 대한 제안, 오타나 잘못된 설명에 대한 제보 모두 환영합니다.</p>
+        <p>이메일: <a href="mailto:contact@ddaycalckr.github.io">contact@ddaycalckr.github.io</a></p>
+        <p>문의하실 때는 사용하신 도구 이름과 입력한 날짜를 함께 적어 주시면 확인이 빠릅니다. 예를 들어 "기념일 계산에서 2026년 2월 29일을 시작일로 넣었을 때 1주년이 이렇게 표시됩니다"처럼 구체적으로 적어 주세요. 보내 주신 내용은 사이트 개선에만 사용하며, 답변은 영업일 기준 며칠이 걸릴 수 있습니다.</p>
+        <p class="muted">계산 결과에 대한 일반적인 질문은 홈페이지의 <a href="#/" data-scrollto="faq">자주 묻는 질문</a>에서 먼저 확인하실 수 있습니다.</p>
+      </section>
+
+      <!-- ===================== PRIVACY ===================== -->
+      <section class="page" id="page-privacy">
+        <h1>개인정보처리방침</h1>
+        <p>디데이 계산기(이하 "사이트")는 이용자의 개인정보를 소중히 다루며, 관련 법령을 준수합니다. 본 방침은 사이트가 어떤 정보를 어떻게 다루는지 설명합니다.</p>
+        <h2>수집하는 정보</h2>
+        <p>사이트는 회원가입 절차가 없으며, 이름, 이메일 주소, 전화번호 같은 개인정보를 수집하지 않습니다. 계산 도구에 입력하는 날짜는 이용자의 브라우저 안에서만 처리되며, 사이트의 서버로 전송되거나 저장되지 않습니다.</p>
+        <h2>쿠키의 사용</h2>
+        <p>사이트 자체는 이용자를 식별하기 위한 쿠키를 사용하지 않습니다. 다만 사이트에 광고나 방문 통계 같은 제3자 서비스가 적용되는 경우, 해당 서비스 제공자가 쿠키를 사용할 수 있습니다. 이 경우 쿠키는 각 제공자의 정책에 따라 처리되며, 이용자는 브라우저 설정에서 쿠키를 차단하거나 삭제할 수 있습니다.</p>
+        <h2>정보의 제3자 제공</h2>
+        <p>사이트는 수집하는 개인정보가 없으므로, 이용자의 개인정보를 제3자에게 제공하거나 판매하지 않습니다.</p>
+        <h2>방침의 변경</h2>
+        <p>본 방침은 법령이나 사이트 운영 방식의 변경에 따라 수정될 수 있으며, 변경 사항은 이 페이지에 게시합니다.</p>
+        <h2>문의</h2>
+        <p>개인정보 처리에 관한 문의는 <a href="mailto:contact@ddaycalckr.github.io">contact@ddaycalckr.github.io</a>로 보내 주세요.</p>
+      </section>
+
+      <!-- ===================== TERMS ===================== -->
+      <section class="page" id="page-terms">
+        <h1>이용약관</h1>
+        <h2>서비스의 내용</h2>
+        <p>디데이 계산기는 디데이 계산, 날짜 차이 계산, 기념일 계산, 날짜 더하기/빼기 도구를 무료로 제공하는 웹사이트입니다. 별도의 회원가입 없이 누구나 이용할 수 있습니다.</p>
+        <h2>계산 결과의 성격</h2>
+        <p>사이트가 제공하는 계산 결과는 실제 달력을 기준으로 산출한 참고 정보입니다. 시험 일정, 전역일, 출산예정일, 계약 기간 등 공식적인 확인이 필요한 날짜는 반드시 해당 기관이나 담당자가 안내한 내용을 기준으로 삼아야 하며, 계산 결과만으로 법적·의학적·행정적 판단을 내려서는 안 됩니다.</p>
+        <h2>책임의 제한</h2>
+        <p>사이트는 계산 결과의 정확성을 위해 노력하지만, 결과의 완전성이나 특정 목적에 대한 적합성을 보장하지는 않습니다. 사이트 이용으로 발생한 손해에 대해 사이트는 관련 법령이 허용하는 범위에서 책임을 제한합니다.</p>
+        <h2>약관의 변경</h2>
+        <p>본 약관은 필요에 따라 변경될 수 있으며, 변경된 약관은 이 페이지에 게시한 시점부터 적용됩니다.</p>
+      </section>
+
+      <!-- ===================== DISCLAIMER ===================== -->
+      <section class="page" id="page-disclaimer">
+        <h1>면책조항</h1>
+        <p>디데이 계산기의 모든 계산 결과와 글의 내용은 일반적인 정보 제공을 목적으로 하며, 참고용으로만 사용해야 합니다.</p>
+        <p>수능 등 각종 시험의 일정, 군 복무와 전역에 관한 사항, 출산예정일을 비롯한 의학적 정보, 계약과 법정 기한처럼 공식적인 효력이 있는 날짜는 반드시 주관 기관, 소속 부대, 의료진, 계약 당사자 등 공식적인 경로를 통해 확인하시기 바랍니다. 사이트의 계산 결과와 공식 안내가 다를 경우 공식 안내가 우선합니다.</p>
+        <p>사이트의 정보를 이용한 결과에 대해 사이트 운영자는 책임을 지지 않습니다. 궁금한 점이 있으면 <a href="#/contact">문의</a> 페이지를 통해 알려 주세요.</p>
+      </section>
+
+    </main>
+
+    <footer class="site">
+      <div class="wrap">
+        <nav aria-label="하단 메뉴">
+          <a href="#/">홈</a>
+          <a href="#/articles">글 모음</a>
+          <a href="#/about">소개</a>
+          <a href="#/contact">문의</a>
+          <a href="#/privacy">개인정보처리방침</a>
+          <a href="#/terms">이용약관</a>
+          <a href="#/disclaimer">면책조항</a>
+        </nav>
+        <p>© 2026 디데이 계산기</p>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        "use strict";
+
+        var WEEKDAYS = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"];
+        var DAY_MS = 86400000;
+
+        function $(id) { return document.getElementById(id); }
+
+        function todayLocal() {
+          var t = new Date();
+          return new Date(t.getFullYear(), t.getMonth(), t.getDate());
+        }
+        function parseLocal(v) {
+          if (!v) return null;
+          var p = v.split("-");
+          if (p.length !== 3) return null;
+          var y = Number(p[0]), m = Number(p[1]), d = Number(p[2]);
+          if (!y || !m || !d) return null;
+          var dt = new Date(y, m - 1, d);
+          if (dt.getFullYear() !== y || dt.getMonth() !== m - 1 || dt.getDate() !== d) return null;
+          return dt;
+        }
+        function dayNum(d) {
+          return Math.round(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / DAY_MS);
+        }
+        function addDays(d, n) {
+          var r = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+          r.setDate(r.getDate() + n);
+          return r;
+        }
+        function addOneYear(d) {
+          var y = d.getFullYear() + 1, m = d.getMonth(), day = d.getDate();
+          var r = new Date(y, m, day);
+          if (r.getMonth() !== m) { r = new Date(y, m + 1, 0); } // 2월 29일 → 2월 28일
+          return r;
+        }
+        function fmt(d) {
+          return d.getFullYear() + "년 " + (d.getMonth() + 1) + "월 " + d.getDate() + "일 (" + WEEKDAYS[d.getDay()] + ")";
+        }
+        function toInputValue(d) {
+          function pad(n) { return (n < 10 ? "0" : "") + n; }
+          return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
+        }
+        function ddayLabel(diff) {
+          if (diff === 0) return "D-DAY";
+          return diff > 0 ? "D-" + diff : "D+" + Math.abs(diff);
+        }
+        function weeksText(days) {
+          var w = Math.floor(days / 7), r = days % 7;
+          if (w === 0) return "";
+          return r === 0 ? " (" + w + "주)" : " (" + w + "주 " + r + "일)";
+        }
+        function relText(diff) {
+          if (diff === 0) return "오늘입니다";
+          if (diff > 0) return diff + "일 남았습니다";
+          return Math.abs(diff) + "일 지났습니다";
+        }
+        function needDate(el) {
+          el.innerHTML = '<p class="sub">날짜를 선택해 주세요.</p>';
+        }
+
+        /* ---------- 오늘 날짜 표시 ---------- */
+        var today = todayLocal();
+        $("todayLine").textContent = fmt(today);
+
+        /* ---------- 기본값 ---------- */
+        $("ddayDate").value = toInputValue(addDays(today, 30));
+        $("diffStart").value = toInputValue(today);
+        $("diffEnd").value = toInputValue(addDays(today, 30));
+        $("annivStart").value = toInputValue(today);
+        $("addBase").value = toInputValue(today);
+
+        /* ---------- 1) 디데이 계산 ---------- */
+        function calcDday() {
+          var out = $("ddayResult");
+          var target = parseLocal($("ddayDate").value);
+          if (!target) { needDate(out); return; }
+          var diff = dayNum(target) - dayNum(todayLocal());
+          var html = '<p class="big">' + ddayLabel(diff) + "</p>";
+          html += '<p class="sub">목표일: ' + fmt(target) + "</p>";
+          if (diff > 0) {
+            html += '<p class="detail">오늘부터 ' + diff + "일 남았습니다." + weeksText(diff) + "</p>";
+          } else if (diff < 0) {
+            html += '<p class="detail">목표일로부터 ' + Math.abs(diff) + "일이 지났습니다." + weeksText(Math.abs(diff)) + "</p>";
+          } else {
+            html += '<p class="detail">오늘이 바로 목표일입니다.</p>';
+          }
+          out.innerHTML = html;
+        }
+
+        /* ---------- 2) 날짜 차이 계산 ---------- */
+        function calcDiff() {
+          var out = $("diffResult");
+          var a = parseLocal($("diffStart").value);
+          var b = parseLocal($("diffEnd").value);
+          if (!a || !b) { needDate(out); return; }
+          var diff = dayNum(b) - dayNum(a);
+          var abs = Math.abs(diff);
+          var html = '<p class="big">' + abs + "일</p>";
+          html += '<p class="sub">' + fmt(a) + " → " + fmt(b) + "</p>";
+          if (diff > 0) {
+            html += '<p class="detail">종료일은 시작일로부터 ' + abs + "일 뒤입니다." + weeksText(abs) + "</p>";
+          } else if (diff < 0) {
+            html += '<p class="detail">종료일은 시작일로부터 ' + abs + "일 앞선 날짜입니다." + weeksText(abs) + "</p>";
+          } else {
+            html += '<p class="detail">두 날짜가 같습니다.</p>';
+          }
+          html += '<p class="detail">시작일과 종료일을 모두 포함해 세면 ' + (abs + 1) + "일입니다.</p>";
+          out.innerHTML = html;
+        }
+
+        /* ---------- 3) 기념일 계산 ---------- */
+        function calcAnniv() {
+          var out = $("annivResult");
+          var start = parseLocal($("annivStart").value);
+          if (!start) { needDate(out); return; }
+          var t = dayNum(todayLocal());
+          var items = [
+            { name: "100일", date: addDays(start, 99) },
+            { name: "200일", date: addDays(start, 199) },
+            { name: "300일", date: addDays(start, 299) },
+            { name: "1주년", date: addOneYear(start) }
+          ];
+          var html = '<p class="sub">시작일 ' + fmt(start) + "을(를) 1일로 셉니다.</p>";
+          html += '<ul class="anniv">';
+          items.forEach(function (it) {
+            var diff = dayNum(it.date) - t;
+            html += "<li>" +
+              '<span class="name">' + it.name + "</span>" +
+              '<span class="date">' + fmt(it.date) + "</span>" +
+              '<span class="rel">' + ddayLabel(diff) + " · " + relText(diff) + "</span>" +
+              "</li>";
+          });
+          html += "</ul>";
+          out.innerHTML = html;
+        }
+
+        /* ---------- 4) 날짜 더하기/빼기 ---------- */
+        function calcAdd() {
+          var out = $("addResult");
+          var base = parseLocal($("addBase").value);
+          if (!base) { needDate(out); return; }
+          var n = parseInt($("addDays").value, 10);
+          if (isNaN(n) || n < 0) {
+            out.innerHTML = '<p class="sub">0 이상의 일수를 입력해 주세요.</p>';
+            return;
+          }
+          var dir = $("addDir").value;
+          var signed = dir === "minus" ? -n : n;
+          var result = addDays(base, signed);
+          var html = '<p class="big" style="font-size:clamp(1.7rem,6vw,2.3rem);">' + fmt(result) + "</p>";
+          html += '<p class="detail">기준일 ' + fmt(base) + "에서 " + n + (dir === "minus" ? "일 전" : "일 후") + "입니다.</p>";
+          out.innerHTML = html;
+        }
+
+        /* ---------- 이벤트 연결 ---------- */
+        function bind(btnId, inputIds, fn) {
+          $(btnId).addEventListener("click", fn);
+          inputIds.forEach(function (id) {
+            $(id).addEventListener("change", fn);
+            $(id).addEventListener("input", fn);
+          });
+        }
+        bind("ddayBtn", ["ddayDate"], calcDday);
+        bind("diffBtn", ["diffStart", "diffEnd"], calcDiff);
+        bind("annivBtn", ["annivStart"], calcAnniv);
+        bind("addBtn", ["addBase", "addDays", "addDir"], calcAdd);
+
+        calcDday();
+        calcDiff();
+        calcAnniv();
+        calcAdd();
+
+        /* ---------- 라우터 ---------- */
+        var routes = {
+          "/": { page: "page-home", nav: "home", title: "디데이 계산기 — 디데이, 날짜 차이, 기념일 계산" },
+          "/articles": { page: "page-articles", nav: "articles", title: "글 모음 | 디데이 계산기" },
+          "/how-to-count-dday": { page: "page-how-to-count-dday", nav: "articles", title: "디데이 세는 법: D-DAY와 D+의 의미 | 디데이 계산기" },
+          "/anniversary-counting": { page: "page-anniversary-counting", nav: "articles", title: "100일, 1주년 기념일 계산하는 법 | 디데이 계산기" },
+          "/dday-use-cases": { page: "page-dday-use-cases", nav: "articles", title: "수능, 전역, 출산예정일 디데이 활용법 | 디데이 계산기" },
+          "/about": { page: "page-about", nav: "about", title: "소개 | 디데이 계산기" },
+          "/contact": { page: "page-contact", nav: "contact", title: "문의 | 디데이 계산기" },
+          "/privacy": { page: "page-privacy", nav: "", title: "개인정보처리방침 | 디데이 계산기" },
+          "/terms": { page: "page-terms", nav: "", title: "이용약관 | 디데이 계산기" },
+          "/disclaimer": { page: "page-disclaimer", nav: "", title: "면책조항 | 디데이 계산기" }
+        };
+        var pendingScroll = null;
+
+        function currentPath() {
+          var h = location.hash.replace(/^#/, "");
+          if (!h || h === "/") return "/";
+          return h.replace(/\/$/, "") || "/";
+        }
+
+        function render() {
+          var path = currentPath();
+          var route = routes[path] || routes["/"];
+          var pages = document.querySelectorAll(".page");
+          for (var i = 0; i < pages.length; i++) {
+            pages[i].classList.toggle("on", pages[i].id === route.page);
+          }
+          var navs = document.querySelectorAll("nav.main a[data-nav]");
+          for (var j = 0; j < navs.length; j++) {
+            var key = navs[j].getAttribute("data-nav");
+            navs[j].classList.toggle("active", key === route.nav || (route.page === "page-home" && key === "home" && !pendingScroll));
+          }
+          document.title = route.title;
+          if (pendingScroll && route.page === "page-home") {
+            var el = document.getElementById(pendingScroll);
+            pendingScroll = null;
+            if (el) {
+              setTimeout(function () { el.scrollIntoView({ behavior: "smooth", block: "start" }); }, 30);
+              return;
+            }
+          }
+          window.scrollTo(0, 0);
+        }
+
+        document.addEventListener("click", function (e) {
+          var a = e.target.closest ? e.target.closest("a[data-scrollto]") : null;
+          if (!a) return;
+          var target = a.getAttribute("data-scrollto");
+          if (currentPath() === "/") {
+            e.preventDefault();
+            var el = document.getElementById(target);
+            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+          } else {
+            pendingScroll = target;
+          }
+        });
+
+        window.addEventListener("hashchange", render);
+        render();
+      })();
+    </script>
+  </body>
+</html>
